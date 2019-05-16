@@ -19,14 +19,14 @@ import (
 )
 
 func main() {
-	ip1 := ipFormat.New("192.168.0.2/24")
-    ip2 := ipFormat.New("192.168.0.6")
+	ip1, _ := ipFormat.New("192.168.0.2/24")
+	ip2, _ := ipFormat.New("192.168.0.6")
 
-    ip1 = ip1.ToV6()
-    ip2 = ip2.ToV6()
-    
-    fmt.PrintLn(ip1.Address)
-    fmt.PrintLn(ip1.CIDR)
-    fmt.PrintLn(ip2.Address)
+	ip1, _ = ip1.ToV6()
+	ip2, _ = ip2.ToV6()
+
+	fmt.Println(ip1.Address)
+	fmt.Println(ip1.CIDR)
+	fmt.Println(ip2.Address)
 }
 ```
