@@ -12,7 +12,7 @@ func (ip IP) ToV6() (IP, error) {
 	}
 
 	// start of ipv6
-	newParts := []string{"0", "0", "0", "0", "0", "ffff"}
+	newParts := []string{"", "", "ffff"}
 
 	// Loop through the old parts converting to ipv6
 	for i, part := range ip.Parts {

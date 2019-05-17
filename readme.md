@@ -1,3 +1,5 @@
+[![GoDoc](https://godoc.org/github.com/buffalo-news/ipFormat?status.svg)](https://godoc.org/github.com/buffalo-news/ipFormat)
+
 # Golang ip Formatting functions
 
 All methods are fairly self explanatory, and reading the godoc page should
