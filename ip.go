@@ -2,6 +2,8 @@ package ipFormat
 
 import (
 	"errors"
+	"net"
+	"net/http"
 	"strconv"
 	"strings"
 )
@@ -12,6 +14,17 @@ type IP struct {
 	TypeV6  bool
 	Range   bool
 	CIDR    int64
+}
+
+func ReadUserIP(r *http.Request) string {
+	IPAddress := r.Header.Get("X-Real-Ip")
+	if IPAddress == "" {
+		IPAddress = r.Header.Get("X-Forwarded-For")
+	}
+	if IPAddress == "" {
+		IPAddress, _, _ = net.SplitHostPort(r.RemoteAddr)
+	}
+	return IPAddress
 }
 
 // New creates the internal IP struct
