@@ -1,4 +1,4 @@
-package ipFormat
+package ipformat
 
 import (
 	"strconv"
